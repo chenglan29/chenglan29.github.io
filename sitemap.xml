@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://chenglan29.github.io/Hexo%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</loc>
+    <loc>http://chenglan29.github.io/%E5%9C%B0%E9%9B%B7/</loc>
     
     <lastmod>2026-01-31</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://chenglan29.github.io/%E5%9C%B0%E9%9B%B7/</loc>
+    <loc>http://chenglan29.github.io/friend.html</loc>
     
     <lastmod>2026-01-31</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>http://chenglan29.github.io/friend.html</loc>
+    <loc>http://chenglan29.github.io/Hexo%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</loc>
     
     <lastmod>2026-01-31</lastmod>
     
@@ -88,6 +88,13 @@
   </url>
   
 
+  
+  <url>
+    <loc>http://chenglan29.github.io/categories/%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
   <url>
     <loc>http://chenglan29.github.io/categories/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%8C%87%E4%BB%A4/</loc>

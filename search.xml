@@ -27,11 +27,20 @@ $ hexo deploy]]></content>
 同理，可以直接在.&#x2F;public 存放其他类型的资源
 但是我们发现使用 hexo clean 会将 .&#x2F;public&#x2F; 清空，所以请记得备份呀
 ]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>地雷</title>
     <url>/%E5%9C%B0%E9%9B%B7/</url>
     <content><![CDATA[不是怎么老贝炸啊TAT
+演示视频:
+
+
 1.循环 无条件 保持开启
 /execute as @e[type=chicken] at @s run tp @s ~~~
 2.循环 无条件 保持开启
