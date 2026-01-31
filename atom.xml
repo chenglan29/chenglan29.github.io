@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>橙蓝的博客</title>
+  
+  
+  <link href="http://chenglan29.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://chenglan29.github.io/"/>
+  <updated>2026-01-26T09:18:57.771Z</updated>
+  <id>http://chenglan29.github.io/</id>
+  
+  <author>
+    <name>橙蓝</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>公告</title>
+    <link href="http://chenglan29.github.io/%E5%85%AC%E5%91%8A/"/>
+    <id>http://chenglan29.github.io/%E5%85%AC%E5%91%8A/</id>
+    <published>+114514-01-09T11:08:10.000Z</published>
+    <updated>2026-01-26T09:18:57.771Z</updated>
+    
+    <content type="html"><![CDATA[<p>O.o</p><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv">本站访客数居然高达 <span id="busuanzi_value_site_uv"></span> 人次</span>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;O.o&lt;/p&gt;
+&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;
+&lt;span id=&quot;busuanzi_container_site_uv&quot;&gt;
+本站</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>我终于学会怎么在Hexo中插入图片了TAT</title>
+    <link href="http://chenglan29.github.io/%E6%88%91%E7%BB%88%E4%BA%8E%E5%AD%A6%E4%BC%9A%E6%80%8E%E4%B9%88%E5%9C%A8Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E4%BA%86TAT/"/>
+    <id>http://chenglan29.github.io/%E6%88%91%E7%BB%88%E4%BA%8E%E5%AD%A6%E4%BC%9A%E6%80%8E%E4%B9%88%E5%9C%A8Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E4%BA%86TAT/</id>
+    <published>2026-01-26T09:14:38.000Z</published>
+    <updated>2026-01-31T02:33:40.984Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/img/%E5%93%AD%E5%93%AD.gif"></p><p>目前大部分在 Hexo 使用图片都是依靠 hexo-asset-image</p><p>但是我们还可以直接把图片放在 .&#x2F;public 下</p><p><strong>重要提醒: 这样做之前，在 _config.yml 中 post_asset_folder 项改为 false</strong></p><p>比如放了一张 1.png ,引用的 URL 为 .&#x2F;1.png</p><p>同理，可以直接在.&#x2F;public 存放其他类型的资源</p><p>但是我们发现使用 hexo clean 会将 .&#x2F;public&#x2F; 清空，所以请记得备份呀</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/img/%E5%93%AD%E5%93%AD.gif&quot;&gt;&lt;/p&gt;
+&lt;p&gt;目前大部分在 Hexo 使用图片都是依靠 hexo-asset-image&lt;/p&gt;
+&lt;p&gt;但是我们还可以直接把图片放在 .&amp;#x2F;public 下&lt;/p&gt;
+&lt;p&gt;&lt;strong</summary>
+      
+    
+    
+    
+    <category term="编程" scheme="http://chenglan29.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo 日常使用</title>
+    <link href="http://chenglan29.github.io/Hexo%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/"/>
+    <id>http://chenglan29.github.io/Hexo%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</id>
+    <published>2025-10-18T15:59:34.000Z</published>
+    <updated>2025-10-18T16:16:05.585Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">$ hexo generate --watch</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
