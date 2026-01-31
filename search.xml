@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hexo 日常使用</title>
+    <url>/Hexo%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[这里是一些最常用的 Hexo 命令了
+启动服务器
+$ hexo server
+
+自动生成文章
+$ hexo generate --watch
+
+将 Hexo 推送到 github
+$ hexo deploy]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我终于学会怎么在Hexo中插入图片了TAT</title>
+    <url>/%E6%88%91%E7%BB%88%E4%BA%8E%E5%AD%A6%E4%BC%9A%E6%80%8E%E4%B9%88%E5%9C%A8Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E4%BA%86TAT/</url>
+    <content><![CDATA[
+目前大部分在 Hexo 使用图片都是依靠 hexo-asset-image
+但是我们还可以直接把图片放在 .&#x2F;public 下
+重要提醒: 这样做之前，在 _config.yml 中 post_asset_folder 项改为 false
+比如放了一张 1.png ,引用的 URL 为 .&#x2F;1.png
+同理，可以直接在.&#x2F;public 存放其他类型的资源
+但是我们发现使用 hexo clean 会将 .&#x2F;public&#x2F; 清空，所以请记得备份呀
+]]></content>
+  </entry>
+  <entry>
+    <title>地雷</title>
+    <url>/%E5%9C%B0%E9%9B%B7/</url>
+    <content><![CDATA[不是怎么老贝炸啊TAT
+1.循环 无条件 保持开启
+/execute as @e[type=chicken] at @s run tp @s ~~~
+2.循环 无条件 保持开启
+/execute as @e[type=chicken] at @s if entity @a[r=3] run damage @e 10 block_explosion]]></content>
+      <categories>
+        <category>我的世界指令</category>
+      </categories>
+      <tags>
+        <tag>我的世界指令</tag>
+      </tags>
+  </entry>
+</search>
