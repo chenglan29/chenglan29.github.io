@@ -6,7 +6,7 @@
   <link href="http://chenglan29.github.io/atom.xml" rel="self"/>
   
   <link href="http://chenglan29.github.io/"/>
-  <updated>2026-01-31T14:16:36.370Z</updated>
+  <updated>2026-02-01T07:22:30.676Z</updated>
   <id>http://chenglan29.github.io/</id>
   
   <author>
@@ -17,13 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>地雷</title>
+    <title>显示最近的实体</title>
+    <link href="http://chenglan29.github.io/%E6%98%BE%E7%A4%BA%E6%9C%80%E8%BF%91%E7%9A%84%E5%AE%9E%E4%BD%93/"/>
+    <id>http://chenglan29.github.io/%E6%98%BE%E7%A4%BA%E6%9C%80%E8%BF%91%E7%9A%84%E5%AE%9E%E4%BD%93/</id>
+    <published>2026-02-01T07:05:41.000Z</published>
+    <updated>2026-02-01T07:22:30.676Z</updated>
+    
+    <content type="html"><![CDATA[<p>躲猫猫结束咯（麦小鼠音）</p><p>1.在输入框输入</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/scoreboard objectives <span class="built_in">add</span> number1 dummy number1</span><br></pre></td></tr></table></figure><p>2.循环 无条件 保持开启</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/scoreboard players <span class="built_in">set</span> @a number1 -1</span><br></pre></td></tr></table></figure><p>3.连锁 无条件 保持开启(被2所指)</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/execute as @e at @s <span class="built_in">run</span> scoreboard players <span class="built_in">add</span> @a[<span class="attribute">r</span>=16] number1 1</span><br></pre></td></tr></table></figure><p>16表示范围，可修改</p><p>4.连锁 无条件 保持开启(被3所指)</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/titleraw <span class="keyword">@a</span> actionbar &#123;&quot;rawtext&quot;: [&#123;&quot;<span class="selector-tag">text</span>&quot;: <span class="string">&quot;§6附近实体数: §a&quot;</span>&#125;, &#123;&quot;score&quot;:&#123;&quot;name&quot;: <span class="string">&quot;@s&quot;</span>,<span class="string">&quot;objective&quot;</span>: <span class="string">&quot;number1&quot;</span>&#125;&#125;]&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;躲猫猫结束咯（麦小鼠音）&lt;/p&gt;
+&lt;p&gt;1.在输入框输入&lt;/p&gt;
+&lt;figure class=&quot;highlight routeros&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/p</summary>
+      
+    
+    
+    
+    <category term="我的世界指令" scheme="http://chenglan29.github.io/categories/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%8C%87%E4%BB%A4/"/>
+    
+    
+    <category term="我的世界指令" scheme="http://chenglan29.github.io/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%8C%87%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>教你做地雷</title>
     <link href="http://chenglan29.github.io/%E5%9C%B0%E9%9B%B7/"/>
     <id>http://chenglan29.github.io/%E5%9C%B0%E9%9B%B7/</id>
-    <published>2026-01-31T04:29:08.000Z</published>
-    <updated>2026-01-31T14:16:36.370Z</updated>
+    <published>2026-01-31T04:29:09.000Z</published>
+    <updated>2026-02-01T07:22:45.942Z</updated>
     
-    <content type="html"><![CDATA[<p>不是怎么老贝炸啊TAT</p><p>演示视频:</p><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115988225858247&bvid=BV1BV6yBXE7z&cid=35725774374&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe><p>1.循环 无条件 保持开启</p><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/<span class="built_in">execute</span> as <span class="symbol">@e[type</span>=chicken] at <span class="symbol">@s</span> <span class="built_in">run</span> tp <span class="symbol">@s</span> ~~~</span><br></pre></td></tr></table></figure><p>2.循环 无条件 保持开启</p><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/<span class="built_in">execute</span> as <span class="symbol">@e[type</span>=chicken] at <span class="symbol">@s</span> <span class="keyword">if</span> entity <span class="symbol">@a[r</span>=<span class="number">3</span>] <span class="built_in">run</span> damage <span class="symbol">@e</span> <span class="number">10</span> block_explosion</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>不是怎么老贝炸啊TAT</p><p>演示视频:</p><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115988225858247&bvid=BV1BV6yBXE7z&cid=35725774374&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe><p>1.循环 无条件 保持开启</p><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/<span class="built_in">execute</span> as <span class="symbol">@e[type</span>=chicken] at <span class="symbol">@s</span> <span class="built_in">run</span> tp <span class="symbol">@s</span> ~~~</span><br></pre></td></tr></table></figure><p>chicken 表示代表的实体，可替换</p><p>2.循环 无条件 保持开启</p><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/<span class="built_in">execute</span> as <span class="symbol">@e[type</span>=chicken] at <span class="symbol">@s</span> <span class="keyword">if</span> entity <span class="symbol">@a[r</span>=<span class="number">3</span>] <span class="built_in">run</span> damage <span class="symbol">@e</span> <span class="number">10</span> block_explosion</span><br></pre></td></tr></table></figure><p>3 表示触发范围,<br>10 表示伤害</p>]]></content>
     
     
       
@@ -62,10 +88,6 @@
     
     
     
-    <category term="编程" scheme="http://chenglan29.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-    <category term="Hexo" scheme="http://chenglan29.github.io/tags/Hexo/"/>
     
   </entry>
   
@@ -88,8 +110,6 @@
     
     
     
-    
-    <category term="Hexo" scheme="http://chenglan29.github.io/tags/Hexo/"/>
     
   </entry>
   
