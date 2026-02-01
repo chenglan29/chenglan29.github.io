@@ -6,7 +6,7 @@
   <link href="http://chenglan29.github.io/atom.xml" rel="self"/>
   
   <link href="http://chenglan29.github.io/"/>
-  <updated>2026-02-01T07:22:30.676Z</updated>
+  <updated>2026-02-01T07:35:50.248Z</updated>
   <id>http://chenglan29.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://chenglan29.github.io/%E6%98%BE%E7%A4%BA%E6%9C%80%E8%BF%91%E7%9A%84%E5%AE%9E%E4%BD%93/"/>
     <id>http://chenglan29.github.io/%E6%98%BE%E7%A4%BA%E6%9C%80%E8%BF%91%E7%9A%84%E5%AE%9E%E4%BD%93/</id>
     <published>2026-02-01T07:05:41.000Z</published>
-    <updated>2026-02-01T07:22:30.676Z</updated>
+    <updated>2026-02-01T07:35:50.248Z</updated>
     
     <content type="html"><![CDATA[<p>躲猫猫结束咯（麦小鼠音）</p><p>1.在输入框输入</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/scoreboard objectives <span class="built_in">add</span> number1 dummy number1</span><br></pre></td></tr></table></figure><p>2.循环 无条件 保持开启</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/scoreboard players <span class="built_in">set</span> @a number1 -1</span><br></pre></td></tr></table></figure><p>3.连锁 无条件 保持开启(被2所指)</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/execute as @e at @s <span class="built_in">run</span> scoreboard players <span class="built_in">add</span> @a[<span class="attribute">r</span>=16] number1 1</span><br></pre></td></tr></table></figure><p>16表示范围，可修改</p><p>4.连锁 无条件 保持开启(被3所指)</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/titleraw <span class="keyword">@a</span> actionbar &#123;&quot;rawtext&quot;: [&#123;&quot;<span class="selector-tag">text</span>&quot;: <span class="string">&quot;§6附近实体数: §a&quot;</span>&#125;, &#123;&quot;score&quot;:&#123;&quot;name&quot;: <span class="string">&quot;@s&quot;</span>,<span class="string">&quot;objective&quot;</span>: <span class="string">&quot;number1&quot;</span>&#125;&#125;]&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -46,8 +46,8 @@
     <title>教你做地雷</title>
     <link href="http://chenglan29.github.io/%E5%9C%B0%E9%9B%B7/"/>
     <id>http://chenglan29.github.io/%E5%9C%B0%E9%9B%B7/</id>
-    <published>2026-01-31T04:29:09.000Z</published>
-    <updated>2026-02-01T07:22:45.942Z</updated>
+    <published>2026-01-31T04:29:08.000Z</published>
+    <updated>2026-02-01T07:35:45.455Z</updated>
     
     <content type="html"><![CDATA[<p>不是怎么老贝炸啊TAT</p><p>演示视频:</p><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115988225858247&bvid=BV1BV6yBXE7z&cid=35725774374&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe><p>1.循环 无条件 保持开启</p><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/<span class="built_in">execute</span> as <span class="symbol">@e[type</span>=chicken] at <span class="symbol">@s</span> <span class="built_in">run</span> tp <span class="symbol">@s</span> ~~~</span><br></pre></td></tr></table></figure><p>chicken 表示代表的实体，可替换</p><p>2.循环 无条件 保持开启</p><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/<span class="built_in">execute</span> as <span class="symbol">@e[type</span>=chicken] at <span class="symbol">@s</span> <span class="keyword">if</span> entity <span class="symbol">@a[r</span>=<span class="number">3</span>] <span class="built_in">run</span> damage <span class="symbol">@e</span> <span class="number">10</span> block_explosion</span><br></pre></td></tr></table></figure><p>3 表示触发范围,<br>10 表示伤害</p>]]></content>
     
@@ -72,8 +72,8 @@
     <title>我终于学会怎么在Hexo中插入图片了TAT</title>
     <link href="http://chenglan29.github.io/%E6%88%91%E7%BB%88%E4%BA%8E%E5%AD%A6%E4%BC%9A%E6%80%8E%E4%B9%88%E5%9C%A8Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E4%BA%86TAT/"/>
     <id>http://chenglan29.github.io/%E6%88%91%E7%BB%88%E4%BA%8E%E5%AD%A6%E4%BC%9A%E6%80%8E%E4%B9%88%E5%9C%A8Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E4%BA%86TAT/</id>
-    <published>2026-01-26T09:14:38.000Z</published>
-    <updated>2026-01-31T06:04:53.852Z</updated>
+    <published>2026-01-26T09:14:31.000Z</published>
+    <updated>2026-02-01T07:35:52.623Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/%E5%93%AD%E5%93%AD.gif"></p><p>目前大部分在 Hexo 使用图片都是依靠 hexo-asset-image</p><p>但是我们还可以直接把图片放在 .&#x2F;public 下</p><p><strong>重要提醒: 这样做之前，在 _config.yml 中 post_asset_folder 项改为 false</strong></p><p>比如放了一张 1.png ,引用的 URL 为 .&#x2F;1.png</p><p>同理，可以直接在.&#x2F;public 存放其他类型的资源</p><p>但是我们发现使用 hexo clean 会将 .&#x2F;public&#x2F; 清空，所以请记得备份呀</p>]]></content>
     
@@ -88,6 +88,10 @@
     
     
     
+    <category term="编程" scheme="http://chenglan29.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="Hexo" scheme="http://chenglan29.github.io/tags/Hexo/"/>
     
   </entry>
   
@@ -95,8 +99,8 @@
     <title>Hexo 日常使用</title>
     <link href="http://chenglan29.github.io/Hexo%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/"/>
     <id>http://chenglan29.github.io/Hexo%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</id>
-    <published>2025-10-18T15:59:31.000Z</published>
-    <updated>2026-01-31T06:03:27.605Z</updated>
+    <published>2025-10-18T15:59:30.000Z</published>
+    <updated>2026-02-01T07:35:47.977Z</updated>
     
     <content type="html"><![CDATA[<p>这里是一些最常用的 Hexo 命令了</p><p>启动服务器</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>自动生成文章</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate --watch</span><br></pre></td></tr></table></figure><p>将 Hexo 推送到 github</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -110,6 +114,8 @@
     
     
     
+    
+    <category term="Hexo" scheme="http://chenglan29.github.io/tags/Hexo/"/>
     
   </entry>
   

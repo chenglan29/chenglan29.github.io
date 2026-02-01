@@ -12,6 +12,9 @@ $ hexo generate --watch
 
 将 Hexo 推送到 github
 $ hexo deploy]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>我终于学会怎么在Hexo中插入图片了TAT</title>
@@ -24,6 +27,12 @@ $ hexo deploy]]></content>
 同理，可以直接在.&#x2F;public 存放其他类型的资源
 但是我们发现使用 hexo clean 会将 .&#x2F;public&#x2F; 清空，所以请记得备份呀
 ]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>教你做地雷</title>
