@@ -1,37 +1,42 @@
 <!doctype html>
 <html lang="zh"><head>
-<title>文章归档 - 橙蓝的博客</title>
+<title>关于Tangyuxian主题对文章无法正常检测分类和标签的解决方案 - 橙蓝的博客</title>
 <meta charset="UTF-8">
 <meta name="keywords" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 <link rel="shortcut icon" href="/images/head/head.jpg" type="image/jpg" />
-<meta property="og:type" content="website">
-<meta property="og:title" content="橙蓝的博客">
-<meta property="og:url" content="http://chenglan29.github.io/archives/index.html">
+<meta name="description" content="我发现这个主题 hexo server 启动时不会自动检测文章的分类和标签， 但是可以在 hexo server 启动之后，并且在 hexo generate –watch 监视之后对文章进行修改便可以解决问题 于是我写出了一下代码(笑哭) 1234567const fs &#x3D; require(&quot;fs&quot;);fs.readdirSync(&quot;.&#x2F;source&#x2F;_posts&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于Tangyuxian主题对文章无法正常检测分类和标签的解决方案">
+<meta property="og:url" content="http://chenglan29.github.io/%E5%85%B3%E4%BA%8ETangyuxian%E4%B8%BB%E9%A2%98%E5%AF%B9%E6%96%87%E7%AB%A0%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%A3%80%E6%B5%8B%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/index.html">
 <meta property="og:site_name" content="橙蓝的博客">
+<meta property="og:description" content="我发现这个主题 hexo server 启动时不会自动检测文章的分类和标签， 但是可以在 hexo server 启动之后，并且在 hexo generate –watch 监视之后对文章进行修改便可以解决问题 于是我写出了一下代码(笑哭) 1234567const fs &#x3D; require(&quot;fs&quot;);fs.readdirSync(&quot;.&#x2F;source&#x2F;_posts&amp;">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-02-04T16:34:15.000Z">
+<meta property="article:modified_time" content="2026-02-04T16:49:02.441Z">
 <meta property="article:author" content="橙蓝">
+<meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
 
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-<link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1770223743786">
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1770223743755">
 
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
 
-<link rel="stylesheet" href="/css/style.css?v=1770223743786">
+<link rel="stylesheet" href="/css/style.css?v=1770223743755">
 
 
 
 
     
-        <link rel="stylesheet" href="/custom.css?v=1770223743786">
+        <link rel="stylesheet" href="/custom.css?v=1770223743755">
     
-        <link rel="stylesheet" href="/themes/umaru/index.css?v=1770223743786">
+        <link rel="stylesheet" href="/themes/umaru/index.css?v=1770223743755">
     
-        <link rel="stylesheet" href="/themes/asuka/index.css?v=1770223743786">
+        <link rel="stylesheet" href="/themes/asuka/index.css?v=1770223743755">
     
 
 
@@ -41,7 +46,7 @@
 <script src="/lib/lax.min.js" async></script>
 
 
-<script async src="/js/app.js?v=1770223743786"></script>
+<script async src="/js/app.js?v=1770223743756"></script>
 
  
 
@@ -517,7 +522,7 @@
 </style>
 
 
-    <script async src="/js/search.js?v=1770223743786"></script>
+    <script async src="/js/search.js?v=1770223743756"></script>
         
 
             
@@ -701,18 +706,16 @@
 </div>
 
     </div>
-</div><!-- .nexmoe-drawer --></div><div id="nexmoe-content"><div class="nexmoe-primary"><section class="nexmoe-posts">
-    <div class="nexmoe-post">
-        <a href="/%E5%85%B3%E4%BA%8ETangyuxian%E4%B8%BB%E9%A2%98%E5%AF%B9%E6%96%87%E7%AB%A0%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%A3%80%E6%B5%8B%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
-            
-                <div class="nexmoe-post-cover mdui-ripple">
-                    <img src="/images/post/hexo.jpg" alt="关于Tangyuxian主题对文章无法正常检测分类和标签的解决方案" loading="lazy">
-                    <h1>关于Tangyuxian主题对文章无法正常检测分类和标签的解决方案</h1>
-                </div>
-                
-        </a>
-
-        <div class="nexmoe-post-meta">
+</div><!-- .nexmoe-drawer --></div><div id="nexmoe-content"><div class="nexmoe-primary"><div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover">
+            <img src="/images/post/hexo.jpg" alt="关于Tangyuxian主题对文章无法正常检测分类和标签的解决方案" loading="lazy">
+            <h1>关于Tangyuxian主题对文章无法正常检测分类和标签的解决方案</h1>
+        </div>
+        
+    
+    <div class="nexmoe-post-meta">
     <div class="nexmoe-rainbow">
         <a class="nexmoefont icon-calendar-fill">2026年02月05日</a>
         
@@ -727,129 +730,46 @@
     
 </div>
 
-        <article>
-            
-        </article>
+    <p>我发现这个主题 hexo server 启动时不会自动检测文章的分类和标签，</p>
+<p>但是可以在 hexo server 启动之后，<br>并且在 hexo generate –watch 监视之后对文章进行修改<br>便可以解决问题</p>
+<p>于是我写出了一下代码(笑哭)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);<br>fs.<span class="hljs-title function_">readdirSync</span>(<span class="hljs-string">&quot;./source/_posts&quot;</span>).<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">item</span>=&gt;</span>&#123;<br>    <span class="hljs-keyword">var</span> name = <span class="hljs-string">&quot;./source/_posts/&quot;</span>+item;<br>    <span class="hljs-keyword">var</span> inner = fs.<span class="hljs-title function_">readFileSync</span>(<span class="hljs-string">&quot;./source/_posts/&quot;</span>+item).<span class="hljs-title function_">toString</span>();<br>    fs.<span class="hljs-title function_">writeFileSync</span>(name,inner+<span class="hljs-string">&#x27;a&#x27;</span>);<br>    fs.<span class="hljs-title function_">writeFileSync</span>(name,inner.<span class="hljs-title function_">substr</span>(<span class="hljs-number">0</span>,inner.<span class="hljs-property">length</span>));<br>&#125;)<br></code></pre></td></tr></table></figure>
+    
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>本文作者：</strong>橙蓝<br>
+        
+        <strong>本文链接：</strong><a href="http://chenglan29.github.io/%E5%85%B3%E4%BA%8ETangyuxian%E4%B8%BB%E9%A2%98%E5%AF%B9%E6%96%87%E7%AB%A0%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%A3%80%E6%B5%8B%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="http:&#x2F;&#x2F;chenglan29.github.io&#x2F;%E5%85%B3%E4%BA%8ETangyuxian%E4%B8%BB%E9%A2%98%E5%AF%B9%E6%96%87%E7%AB%A0%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%A3%80%E6%B5%8B%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;chenglan29.github.io&#x2F;%E5%85%B3%E4%BA%8ETangyuxian%E4%B8%BB%E9%A2%98%E5%AF%B9%E6%96%87%E7%AB%A0%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%A3%80%E6%B5%8B%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88&#x2F;</a><br>
+
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+        
     </div>
 
-    <div class="nexmoe-post">
-        <a href="/%E6%98%BE%E7%A4%BA%E6%9C%80%E8%BF%91%E7%9A%84%E5%AE%9E%E4%BD%93/">
-            
-                <div class="nexmoe-post-cover mdui-ripple">
-                    <img src="/images/post/minecraft.jpg" alt="显示最近的实体" loading="lazy">
-                    <h1>显示最近的实体</h1>
-                </div>
-                
-        </a>
 
-        <div class="nexmoe-post-meta">
-    <div class="nexmoe-rainbow">
-        <a class="nexmoefont icon-calendar-fill">2026年02月01日</a>
-        
-            <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%8C%87%E4%BB%A4/">我的世界指令</a>
-        
-        
-    </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
     
-    
-    
-    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Hexo/" rel="tag">Hexo</a>
     
 </div>
+  
+  
+    <script async src="/js/copy-codeblock.js?v=1770223743704"></script>
+  
 
-        <article>
-            
-        </article>
-    </div>
-
-    <div class="nexmoe-post">
-        <a href="/%E5%9C%B0%E9%9B%B7/">
-            
-                <div class="nexmoe-post-cover mdui-ripple">
-                    <img src="/images/post/minecraft.jpg" alt="教你做地雷" loading="lazy">
-                    <h1>教你做地雷</h1>
-                </div>
-                
-        </a>
-
-        <div class="nexmoe-post-meta">
-    <div class="nexmoe-rainbow">
-        <a class="nexmoefont icon-calendar-fill">2026年01月31日</a>
-        
-            <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%8C%87%E4%BB%A4/">我的世界指令</a>
-        
-        
-    </div>
-    
-    
-    
-    
-    
-</div>
-
-        <article>
-            
-        </article>
-    </div>
-
-    <div class="nexmoe-post">
-        <a href="/%E6%88%91%E7%BB%88%E4%BA%8E%E5%AD%A6%E4%BC%9A%E6%80%8E%E4%B9%88%E5%9C%A8Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E4%BA%86TAT/">
-            
-                <div class="nexmoe-post-cover mdui-ripple">
-                    <img src="/images/post/hexo.jpg" alt="我终于学会怎么在Hexo中插入图片了TAT" loading="lazy">
-                    <h1>我终于学会怎么在Hexo中插入图片了TAT</h1>
-                </div>
-                
-        </a>
-
-        <div class="nexmoe-post-meta">
-    <div class="nexmoe-rainbow">
-        <a class="nexmoefont icon-calendar-fill">2026年01月26日</a>
-        
-            <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
-        
-        
-    </div>
-    
-    
-    
-    
-    
-</div>
-
-        <article>
-            
-        </article>
-    </div>
-
-    <div class="nexmoe-post">
-        <a href="/Hexo%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/">
-            
-                <div class="nexmoe-post-cover mdui-ripple">
-                    <img src="/images/post/hexo.jpg" alt="Hexo 日常使用" loading="lazy">
-                    <h1>Hexo 日常使用</h1>
-                </div>
-                
-        </a>
-
-        <div class="nexmoe-post-meta">
-    <div class="nexmoe-rainbow">
-        <a class="nexmoefont icon-calendar-fill">2025年10月18日</a>
-        
-        
-    </div>
-    
-    
-    
-    
-    
-</div>
-
-        <article>
-            
-        </article>
-    </div>
-</section> </div><div class="nexmoe-post-right">    <div class="nexmoe-fixed">
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div></div><div class="nexmoe-post-right">    <div class="nexmoe-fixed">
         <div class="nexmoe-tool">
 
             

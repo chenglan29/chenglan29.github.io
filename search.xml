@@ -25,7 +25,7 @@ $ hexo deploy]]></content>
 重要提醒: 这样做之前，在 _config.yml 中 post_asset_folder 项改为 false
 比如放了一张 1.png ,引用的 URL 为 .&#x2F;1.png
 同理，可以直接在.&#x2F;public 存放其他类型的资源
-但是我们发现使用 hexo clean 会将 .&#x2F;public&#x2F; 清空，所以请记得备份呀
+但是我们发现使用 hexo clean 会将 .&#x2F;public&#x2F; 清空，所以请记得备份
 ]]></content>
       <categories>
         <category>编程</category>
@@ -75,6 +75,20 @@ chicken 表示代表的实体，可替换
       </categories>
       <tags>
         <tag>我的世界指令</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于Tangyuxian主题对文章无法正常检测分类和标签的解决方案</title>
+    <url>/%E5%85%B3%E4%BA%8ETangyuxian%E4%B8%BB%E9%A2%98%E5%AF%B9%E6%96%87%E7%AB%A0%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%A3%80%E6%B5%8B%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[我发现这个主题 hexo server 启动时不会自动检测文章的分类和标签，
+但是可以在 hexo server 启动之后，并且在 hexo generate –watch 监视之后对文章进行修改便可以解决问题
+于是我写出了一下代码(笑哭)
+const fs = require(&quot;fs&quot;);fs.readdirSync(&quot;./source/_posts&quot;).forEach(item=&gt;&#123;    var name = &quot;./source/_posts/&quot;+item;    var inner = fs.readFileSync(&quot;./source/_posts/&quot;+item).toString();    fs.writeFileSync(name,inner+&#x27;a&#x27;);    fs.writeFileSync(name,inner.substr(0,inner.length));&#125;)]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>

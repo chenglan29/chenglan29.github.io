@@ -6,7 +6,7 @@
   <link href="http://chenglan29.github.io/atom.xml" rel="self"/>
   
   <link href="http://chenglan29.github.io/"/>
-  <updated>2026-02-01T07:35:50.248Z</updated>
+  <updated>2026-02-04T16:49:02.441Z</updated>
   <id>http://chenglan29.github.io/</id>
   
   <author>
@@ -17,13 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>关于Tangyuxian主题对文章无法正常检测分类和标签的解决方案</title>
+    <link href="http://chenglan29.github.io/%E5%85%B3%E4%BA%8ETangyuxian%E4%B8%BB%E9%A2%98%E5%AF%B9%E6%96%87%E7%AB%A0%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%A3%80%E6%B5%8B%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>http://chenglan29.github.io/%E5%85%B3%E4%BA%8ETangyuxian%E4%B8%BB%E9%A2%98%E5%AF%B9%E6%96%87%E7%AB%A0%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%A3%80%E6%B5%8B%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
+    <published>2026-02-04T16:34:15.000Z</published>
+    <updated>2026-02-04T16:49:02.441Z</updated>
+    
+    <content type="html"><![CDATA[<p>我发现这个主题 hexo server 启动时不会自动检测文章的分类和标签，</p><p>但是可以在 hexo server 启动之后，<br>并且在 hexo generate –watch 监视之后对文章进行修改<br>便可以解决问题</p><p>于是我写出了一下代码(笑哭)</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);<br>fs.<span class="hljs-title function_">readdirSync</span>(<span class="hljs-string">&quot;./source/_posts&quot;</span>).<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">item</span>=&gt;</span>&#123;<br>    <span class="hljs-keyword">var</span> name = <span class="hljs-string">&quot;./source/_posts/&quot;</span>+item;<br>    <span class="hljs-keyword">var</span> inner = fs.<span class="hljs-title function_">readFileSync</span>(<span class="hljs-string">&quot;./source/_posts/&quot;</span>+item).<span class="hljs-title function_">toString</span>();<br>    fs.<span class="hljs-title function_">writeFileSync</span>(name,inner+<span class="hljs-string">&#x27;a&#x27;</span>);<br>    fs.<span class="hljs-title function_">writeFileSync</span>(name,inner.<span class="hljs-title function_">substr</span>(<span class="hljs-number">0</span>,inner.<span class="hljs-property">length</span>));<br>&#125;)<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;我发现这个主题 hexo server 启动时不会自动检测文章的分类和标签，&lt;/p&gt;
+&lt;p&gt;但是可以在 hexo server 启动之后，&lt;br&gt;并且在 hexo generate –watch 监视之后对文章进行修改&lt;br&gt;便可以解决问题&lt;/p&gt;
+&lt;p&gt;于是我写出了一下代</summary>
+      
+    
+    
+    
+    <category term="编程" scheme="http://chenglan29.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="Hexo" scheme="http://chenglan29.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>显示最近的实体</title>
     <link href="http://chenglan29.github.io/%E6%98%BE%E7%A4%BA%E6%9C%80%E8%BF%91%E7%9A%84%E5%AE%9E%E4%BD%93/"/>
     <id>http://chenglan29.github.io/%E6%98%BE%E7%A4%BA%E6%9C%80%E8%BF%91%E7%9A%84%E5%AE%9E%E4%BD%93/</id>
     <published>2026-02-01T07:05:41.000Z</published>
-    <updated>2026-02-01T07:35:50.248Z</updated>
+    <updated>2026-02-04T16:49:02.442Z</updated>
     
-    <content type="html"><![CDATA[<p>躲猫猫结束咯（麦小鼠音）</p><p>1.在输入框输入</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/scoreboard objectives <span class="built_in">add</span> number1 dummy number1</span><br></pre></td></tr></table></figure><p>2.循环 无条件 保持开启</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/scoreboard players <span class="built_in">set</span> @a number1 -1</span><br></pre></td></tr></table></figure><p>3.连锁 无条件 保持开启(被2所指)</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/execute as @e at @s <span class="built_in">run</span> scoreboard players <span class="built_in">add</span> @a[<span class="attribute">r</span>=16] number1 1</span><br></pre></td></tr></table></figure><p>16表示范围，可修改</p><p>4.连锁 无条件 保持开启(被3所指)</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/titleraw <span class="keyword">@a</span> actionbar &#123;&quot;rawtext&quot;: [&#123;&quot;<span class="selector-tag">text</span>&quot;: <span class="string">&quot;§6附近实体数: §a&quot;</span>&#125;, &#123;&quot;score&quot;:&#123;&quot;name&quot;: <span class="string">&quot;@s&quot;</span>,<span class="string">&quot;objective&quot;</span>: <span class="string">&quot;number1&quot;</span>&#125;&#125;]&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>躲猫猫结束咯（麦小鼠音）</p><p>1.在输入框输入</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">/scoreboard objectives <span class="hljs-built_in">add</span> number1 dummy number1<br></code></pre></td></tr></table></figure><p>2.循环 无条件 保持开启</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">/scoreboard players <span class="hljs-built_in">set</span> @a number1 -1<br></code></pre></td></tr></table></figure><p>3.连锁 无条件 保持开启(被2所指)</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">/execute as @e at @s <span class="hljs-built_in">run</span> scoreboard players <span class="hljs-built_in">add</span> @a[<span class="hljs-attribute">r</span>=16] number1 1<br></code></pre></td></tr></table></figure><p>16表示范围，可修改</p><p>4.连锁 无条件 保持开启(被3所指)</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">/titleraw <span class="hljs-keyword">@a</span> actionbar &#123;&quot;rawtext&quot;: [&#123;&quot;<span class="hljs-selector-tag">text</span>&quot;: <span class="hljs-string">&quot;§6附近实体数: §a&quot;</span>&#125;, &#123;&quot;score&quot;:&#123;&quot;name&quot;: <span class="hljs-string">&quot;@s&quot;</span>,<span class="hljs-string">&quot;objective&quot;</span>: <span class="hljs-string">&quot;number1&quot;</span>&#125;&#125;]&#125;<br></code></pre></td></tr></table></figure>]]></content>
     
     
       
@@ -47,9 +73,9 @@
     <link href="http://chenglan29.github.io/%E5%9C%B0%E9%9B%B7/"/>
     <id>http://chenglan29.github.io/%E5%9C%B0%E9%9B%B7/</id>
     <published>2026-01-31T04:29:08.000Z</published>
-    <updated>2026-02-01T07:35:45.455Z</updated>
+    <updated>2026-02-04T16:49:02.441Z</updated>
     
-    <content type="html"><![CDATA[<p>不是怎么老贝炸啊TAT</p><p>演示视频:</p><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115988225858247&bvid=BV1BV6yBXE7z&cid=35725774374&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe><p>1.循环 无条件 保持开启</p><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/<span class="built_in">execute</span> as <span class="symbol">@e[type</span>=chicken] at <span class="symbol">@s</span> <span class="built_in">run</span> tp <span class="symbol">@s</span> ~~~</span><br></pre></td></tr></table></figure><p>chicken 表示代表的实体，可替换</p><p>2.循环 无条件 保持开启</p><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/<span class="built_in">execute</span> as <span class="symbol">@e[type</span>=chicken] at <span class="symbol">@s</span> <span class="keyword">if</span> entity <span class="symbol">@a[r</span>=<span class="number">3</span>] <span class="built_in">run</span> damage <span class="symbol">@e</span> <span class="number">10</span> block_explosion</span><br></pre></td></tr></table></figure><p>3 表示触发范围,<br>10 表示伤害</p>]]></content>
+    <content type="html"><![CDATA[<p>不是怎么老贝炸啊TAT</p><p>演示视频:</p><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115988225858247&bvid=BV1BV6yBXE7z&cid=35725774374&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe><p>1.循环 无条件 保持开启</p><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autoit">/<span class="hljs-built_in">execute</span> as <span class="hljs-symbol">@e[type</span>=chicken] at <span class="hljs-symbol">@s</span> <span class="hljs-built_in">run</span> tp <span class="hljs-symbol">@s</span> ~~~<br></code></pre></td></tr></table></figure><p>chicken 表示代表的实体，可替换</p><p>2.循环 无条件 保持开启</p><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autoit">/<span class="hljs-built_in">execute</span> as <span class="hljs-symbol">@e[type</span>=chicken] at <span class="hljs-symbol">@s</span> <span class="hljs-keyword">if</span> entity <span class="hljs-symbol">@a[r</span>=<span class="hljs-number">3</span>] <span class="hljs-built_in">run</span> damage <span class="hljs-symbol">@e</span> <span class="hljs-number">10</span> block_explosion<br></code></pre></td></tr></table></figure><p>3 表示触发范围,<br>10 表示伤害</p>]]></content>
     
     
       
@@ -73,9 +99,9 @@
     <link href="http://chenglan29.github.io/%E6%88%91%E7%BB%88%E4%BA%8E%E5%AD%A6%E4%BC%9A%E6%80%8E%E4%B9%88%E5%9C%A8Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E4%BA%86TAT/"/>
     <id>http://chenglan29.github.io/%E6%88%91%E7%BB%88%E4%BA%8E%E5%AD%A6%E4%BC%9A%E6%80%8E%E4%B9%88%E5%9C%A8Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E4%BA%86TAT/</id>
     <published>2026-01-26T09:14:31.000Z</published>
-    <updated>2026-02-01T07:35:52.623Z</updated>
+    <updated>2026-02-04T16:49:02.442Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/images/%E5%93%AD%E5%93%AD.gif"></p><p>目前大部分在 Hexo 使用图片都是依靠 hexo-asset-image</p><p>但是我们还可以直接把图片放在 .&#x2F;public 下</p><p><strong>重要提醒: 这样做之前，在 _config.yml 中 post_asset_folder 项改为 false</strong></p><p>比如放了一张 1.png ,引用的 URL 为 .&#x2F;1.png</p><p>同理，可以直接在.&#x2F;public 存放其他类型的资源</p><p>但是我们发现使用 hexo clean 会将 .&#x2F;public&#x2F; 清空，所以请记得备份呀</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="/images/%E5%93%AD%E5%93%AD.gif"></p><p>目前大部分在 Hexo 使用图片都是依靠 hexo-asset-image</p><p>但是我们还可以直接把图片放在 .&#x2F;public 下</p><p><strong>重要提醒: 这样做之前，在 _config.yml 中 post_asset_folder 项改为 false</strong></p><p>比如放了一张 1.png ,引用的 URL 为 .&#x2F;1.png</p><p>同理，可以直接在.&#x2F;public 存放其他类型的资源</p><p>但是我们发现使用 hexo clean 会将 .&#x2F;public&#x2F; 清空，所以请记得备份</p>]]></content>
     
     
       
@@ -100,9 +126,9 @@
     <link href="http://chenglan29.github.io/Hexo%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/"/>
     <id>http://chenglan29.github.io/Hexo%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</id>
     <published>2025-10-18T15:59:30.000Z</published>
-    <updated>2026-02-01T07:35:47.977Z</updated>
+    <updated>2026-02-04T16:49:02.441Z</updated>
     
-    <content type="html"><![CDATA[<p>这里是一些最常用的 Hexo 命令了</p><p>启动服务器</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>自动生成文章</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate --watch</span><br></pre></td></tr></table></figure><p>将 Hexo 推送到 github</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>这里是一些最常用的 Hexo 命令了</p><p>启动服务器</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>自动生成文章</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate --watch<br></code></pre></td></tr></table></figure><p>将 Hexo 推送到 github</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>]]></content>
     
     
       
