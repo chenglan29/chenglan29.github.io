@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hexo 日常使用</title>
+    <url>/Hexo%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[这里是一些最常用的 Hexo 命令了
+启动服务器
+$ hexo server
+
+自动生成文章
+$ hexo generate --watch
+
+将 Hexo 推送到 github
+$ hexo deploy]]></content>
+  </entry>
+  <entry>
+    <title>我终于学会怎么在Hexo中插入图片了TAT</title>
+    <url>/%E6%88%91%E7%BB%88%E4%BA%8E%E5%AD%A6%E4%BC%9A%E6%80%8E%E4%B9%88%E5%9C%A8Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E4%BA%86TAT/</url>
+    <content><![CDATA[
+目前大部分在 Hexo 使用图片都是依靠 hexo-asset-image
+但是我们还可以直接把图片放在 .&#x2F;public 下
+重要提醒: 这样做之前，在 _config.yml 中 post_asset_folder 项改为 false
+比如放了一张 1.png ,引用的 URL 为 .&#x2F;1.png
+同理，可以直接在.&#x2F;public 存放其他类型的资源
+但是我们发现使用 hexo clean 会将 .&#x2F;public&#x2F; 清空，所以请记得备份哦
+]]></content>
+  </entry>
+  <entry>
+    <title>教你做地雷</title>
+    <url>/%E5%9C%B0%E9%9B%B7/</url>
+    <content><![CDATA[不是怎么老贝炸啊TAT
+演示视频:
+
+
+1.循环 无条件 保持开启
+/execute as @e[type=chicken] at @s run tp @s ~~~
+chicken 表示代表的实体，可替换
+2.循环 无条件 保持开启
+/execute as @e[type=chicken] at @s if entity @a[r=3] run damage @e 10 block_explosion
+3 表示触发范围,10 表示伤害
+]]></content>
+  </entry>
+  <entry>
+    <title>显示最近的实体</title>
+    <url>/%E6%98%BE%E7%A4%BA%E6%9C%80%E8%BF%91%E7%9A%84%E5%AE%9E%E4%BD%93/</url>
+    <content><![CDATA[躲猫猫结束咯（麦小鼠音）
+1.在输入框输入
+/scoreboard objectives add number1 dummy number1
+
+2.循环 无条件 保持开启
+/scoreboard players set @a number1 -1
+
+3.连锁 无条件 保持开启(被2所指)
+/execute as @e at @s run scoreboard players add @a[r=16] number1 1
+16表示范围，可修改
+4.连锁 无条件 保持开启(被3所指)
+/titleraw @a actionbar &#123;&quot;rawtext&quot;: [&#123;&quot;text&quot;: &quot;§6附近实体数: §a&quot;&#125;, &#123;&quot;score&quot;:&#123;&quot;name&quot;: &quot;@s&quot;,&quot;objective&quot;: &quot;number1&quot;&#125;&#125;]&#125;]]></content>
+  </entry>
+  <entry>
+    <title>关于Tangyuxian主题对文章无法正常检测分类和标签的解决方案</title>
+    <url>/%E5%85%B3%E4%BA%8ETangyuxian%E4%B8%BB%E9%A2%98%E5%AF%B9%E6%96%87%E7%AB%A0%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%A3%80%E6%B5%8B%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[我发现这个主题 hexo server 启动时不会自动检测文章的分类和标签，
+但是可以在 hexo server 启动之后，并且在 hexo generate –watch 监视之后对文章进行修改便可以解决问题
+于是我写出了一下代码(笑哭)
+const fs = require(&quot;fs&quot;);fs.readdirSync(&quot;./source/_posts&quot;).forEach(item=&gt;&#123;    var name = &quot;./source/_posts/&quot;+item;    var inner = fs.readFileSync(&quot;./source/_posts/&quot;+item).toString();    fs.writeFileSync(name,inner+&#x27;a&#x27;);    fs.writeFileSync(name,inner.substr(0,inner.length));&#125;)]]></content>
+  </entry>
+  <entry>
+    <title>BF解释器</title>
+    <url>/BF%E8%A7%A3%E9%87%8A%E5%99%A8/</url>
+    <content><![CDATA[BF 语法规则
++ 将该条带位置的数值+1
+- 将该条带位置的数值-1
+&lt; 将指针位置右移
+&gt; 将指针位置左移
+[
+]如果条带位置的数值大于 0 则不执行 [] 中的内容
+
+本解释器特色这个编辑器支持 500000 大小的条带以及 10000 级嵌套指针范围为 -49999~49999
+BF 解释器#include &lt;bits/stdc++.h&gt;using namespace std;int main()&#123;	    int map[100000];    int st[30000];    int stTop = 0;    int point = 0;        for(;;)&#123;    	string s;    getline(cin,s);    for(int i = 0;i&lt;s.size();i++)&#123;        if(s[i] == &#x27;+&#x27;)map[point+50000]++;        else if(s[i] == &#x27;-&#x27;)map[point+50000]--;        else if(s[i] == &#x27;&gt;&#x27;)point++;        else if(s[i] == &#x27;&lt;&#x27;)point--;        else if(s[i] == &#x27;[&#x27;)&#123;            if(map[point+50000] &gt; 0)&#123;                st[stTop] = i;                stTop++;            &#125;            else &#123;                int p = 0;                for(;;)&#123;                    if(s[i] == &#x27;[&#x27;)p++;                    if(s[i] == &#x27;]&#x27;)&#123;                        if(p&gt;0)p--;                        else break;                    &#125;                    i++;                &#125;            &#125;        &#125;        else if(s[i] == &#x27;]&#x27;)&#123;            stTop--;            i = st[stTop]-1;//            st[stTop] = -1;        &#125;        else if(s[i] == &#x27;.&#x27;)&#123;            cout &lt;&lt; char(map[point+50000]);        &#125;        else if(s[i] == &#x27;,&#x27;)&#123;            char a;            cin &gt;&gt; a;            map[point+50000] = a;        &#125;        if(s[0] == &#x27;*&#x27;)&#123;            cout &lt;&lt; &quot;i: &quot; &lt;&lt; i             &lt;&lt; &quot; s[i]: &quot; &lt;&lt; s[i]             &lt;&lt; &quot; point: &quot; &lt;&lt; point             &lt;&lt; &quot; map[point]: &quot; &lt;&lt; map[point]             &lt;&lt; &quot; stTop: &quot; &lt;&lt; stTop             &lt;&lt; &quot; st[stTop]: &quot; &lt;&lt; st[stTop]             &lt;&lt; endl;        &#125;    &#125;    &#125;     return 0;&#125;]]></content>
+  </entry>
+  <entry>
+    <title>终末地666</title>
+    <url>/%E7%BB%88%E6%9C%AB%E5%9C%B0666/</url>
+    <content><![CDATA[已经好久没玩二游了（上一次玩的还是原神&#x2F;流汗黄豆），
+加上今天是周末，不用助教
+然后在捣鼓工业，过了0点才意识到
+结果就是蓝桥漏打卡一天
+最后直接摆烂，把自己的工业建崩了(效率不对等并且超功率了)(笑哭)
+还有，为什么Watt Toolkit 没有 pixiv 的加速了
+整得我只能去 Bilibili 找版图
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>终末地</tag>
+      </tags>
+  </entry>
+</search>
