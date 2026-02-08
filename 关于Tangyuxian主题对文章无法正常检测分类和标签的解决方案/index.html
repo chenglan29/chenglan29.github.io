@@ -13,29 +13,30 @@
 <meta property="og:description" content="我发现这个主题 hexo server 启动时不会自动检测文章的分类和标签， 但是可以在 hexo server 启动之后，并且在 hexo generate –watch 监视之后对文章进行修改便可以解决问题 于是我写出了一下代码(笑哭) 1234567const fs &#x3D; require(&quot;fs&quot;);fs.readdirSync(&quot;.&#x2F;source&#x2F;_posts&amp;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-02-04T16:34:15.000Z">
-<meta property="article:modified_time" content="2026-02-04T16:46:32.008Z">
+<meta property="article:modified_time" content="2026-02-08T02:52:34.618Z">
 <meta property="article:author" content="橙蓝">
+<meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
 
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-<link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1770399118113">
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1770519156107">
 
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
 
-<link rel="stylesheet" href="/css/style.css?v=1770399118113">
+<link rel="stylesheet" href="/css/style.css?v=1770519156107">
 
 
 
 
     
-        <link rel="stylesheet" href="/custom.css?v=1770399118113">
+        <link rel="stylesheet" href="/custom.css?v=1770519156107">
     
-        <link rel="stylesheet" href="/themes/umaru/index.css?v=1770399118113">
+        <link rel="stylesheet" href="/themes/umaru/index.css?v=1770519156107">
     
-        <link rel="stylesheet" href="/themes/asuka/index.css?v=1770399118113">
+        <link rel="stylesheet" href="/themes/asuka/index.css?v=1770519156107">
     
 
 
@@ -45,7 +46,7 @@
 <script src="/lib/lax.min.js" async></script>
 
 
-<script async src="/js/app.js?v=1770399118113"></script>
+<script async src="/js/app.js?v=1770519156107"></script>
 
  
 
@@ -61,8 +62,8 @@
     </div>
     <div class="nexmoe-count">
         <div class="nexmoe-count-item"><span>文章</span>7 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
-        <div class="nexmoe-count-item"><span>标签</span>1<div class="item-radius"></div><div class="item-radius item-right"></div></div>
-        <div class="nexmoe-count-item"><span>分类</span>1<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+        <div class="nexmoe-count-item"><span>标签</span>5<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+        <div class="nexmoe-count-item"><span>分类</span>3<div class="item-radius"></div><div class="item-radius item-right"></div></div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
@@ -521,7 +522,7 @@
 </style>
 
 
-    <script async src="/js/search.js?v=1770399118114"></script>
+    <script async src="/js/search.js?v=1770519156107"></script>
         
 
             
@@ -602,8 +603,22 @@
         
 
         <li class="category-list-item">
+          <a class="category-list-link" href="/categories/我的世界指令/">我的世界指令</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
           <a class="category-list-link" href="/categories/日常/">日常</a>
           <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/编程/">编程</a>
+          <span class="category-list-count">3</span>
         </li>
 
         
@@ -618,12 +633,12 @@
         
   <div class="nexmoe-widget-wrap">
     <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
-      <a href="/tags/%E7%BB%88%E6%9C%AB%E5%9C%B0/" style="font-size: 10px;">终末地</a>
+      <a href="/tags/BF/" style="font-size: 10px;">BF</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%8C%87%E4%BB%A4/" style="font-size: 15px;">我的世界指令</a> <a href="/tags/%E7%BB%88%E6%9C%AB%E5%9C%B0/" style="font-size: 10px;">终末地</a>
     </div>
     
       <script>
         var maxTagcloud = parseInt(17);
-        var tags_length = parseInt(1);
+        var tags_length = parseInt(5);
         var tags_arr = [];
         for(var i = 0; i < tags_length; i++){
           tags_arr.push(i);
@@ -711,6 +726,8 @@
     <div class="nexmoe-rainbow">
         <a class="nexmoefont icon-calendar-fill">2026年02月05日</a>
         
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+        
         
     </div>
     
@@ -723,7 +740,7 @@
     <p>我发现这个主题 hexo server 启动时不会自动检测文章的分类和标签，</p>
 <p>但是可以在 hexo server 启动之后，<br>并且在 hexo generate –watch 监视之后对文章进行修改<br>便可以解决问题</p>
 <p>于是我写出了一下代码(笑哭)</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line">fs.<span class="title function_">readdirSync</span>(<span class="string">&quot;./source/_posts&quot;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">item</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">&quot;./source/_posts/&quot;</span>+item;</span><br><span class="line">    <span class="keyword">var</span> inner = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;./source/_posts/&quot;</span>+item).<span class="title function_">toString</span>();</span><br><span class="line">    fs.<span class="title function_">writeFileSync</span>(name,inner+<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">    fs.<span class="title function_">writeFileSync</span>(name,inner.<span class="title function_">substr</span>(<span class="number">0</span>,inner.<span class="property">length</span>));</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);<br>fs.<span class="hljs-title function_">readdirSync</span>(<span class="hljs-string">&quot;./source/_posts&quot;</span>).<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">item</span>=&gt;</span>&#123;<br>    <span class="hljs-keyword">var</span> name = <span class="hljs-string">&quot;./source/_posts/&quot;</span>+item;<br>    <span class="hljs-keyword">var</span> inner = fs.<span class="hljs-title function_">readFileSync</span>(<span class="hljs-string">&quot;./source/_posts/&quot;</span>+item).<span class="hljs-title function_">toString</span>();<br>    fs.<span class="hljs-title function_">writeFileSync</span>(name,inner+<span class="hljs-string">&#x27;a&#x27;</span>);<br>    fs.<span class="hljs-title function_">writeFileSync</span>(name,inner.<span class="hljs-title function_">substr</span>(<span class="hljs-number">0</span>,inner.<span class="hljs-property">length</span>));<br>&#125;)<br></code></pre></td></tr></table></figure>
     
   </article>
 
@@ -746,10 +763,12 @@
   <div class="nexmoe-post-meta nexmoe-rainbow">
    
     
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Hexo/" rel="tag">Hexo</a>
+    
 </div>
   
   
-    <script async src="/js/copy-codeblock.js?v=1770399118084"></script>
+    <script async src="/js/copy-codeblock.js?v=1770519156073"></script>
   
 
   
