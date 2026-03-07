@@ -12,18 +12,142 @@ $ hexo generate --watch
 
 将 Hexo 推送到 github
 $ hexo deploy]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
-    <title>我终于学会怎么在Hexo中插入图片了TAT</title>
-    <url>/%E6%88%91%E7%BB%88%E4%BA%8E%E5%AD%A6%E4%BC%9A%E6%80%8E%E4%B9%88%E5%9C%A8Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E4%BA%86TAT/</url>
-    <content><![CDATA[
-目前大部分在 Hexo 使用图片都是依靠 hexo-asset-image
-但是我们还可以直接把图片放在 .&#x2F;public 下
-重要提醒: 这样做之前，在 _config.yml 中 post_asset_folder 项改为 false
-比如放了一张 1.png ,引用的 URL 为 .&#x2F;1.png
-同理，可以直接在.&#x2F;public 存放其他类型的资源
-但是我们发现使用 hexo clean 会将 .&#x2F;public&#x2F; 清空，所以请记得备份哦
-]]></content>
+    <title>NOIP普及组教学1-回文数</title>
+    <url>/NOIP%E6%99%AE%E5%8F%8A%E7%BB%84%E6%95%99%E5%AD%A61-%E5%9B%9E%E6%96%87%E6%95%B0/</url>
+    <content><![CDATA[P1015 [NOIP 1999 普及组] 回文数题目描述若一个数（首位不为零）从左向右读与从右向左读都一样，我们就将其称之为回文数。
+例如：给定一个十进制数 $56$，将 $56$ 加 $65$（即把 $56$ 从右向左读），得到 $121$ 是一个回文数。
+又如：对于十进制数 $87$：
+STEP1：$87+78&#x3D;165$STEP2：$165+561&#x3D;726$STEP3：$726+627&#x3D;1353$STEP4：$1353+3531&#x3D;4884$  
+在这里的一步是指进行了一次 $N$ 进制的加法，上例最少用了 $4$ 步得到回文数 $4884$。
+写一个程序，给定一个 $N$（$2 \le N \le 10$ 或 $N&#x3D;16$）进制数 $M$（$100$ 位之内），求最少经过几步可以得到回文数。如果在 $30$ 步以内（包含 $30$ 步）不可能得到回文数，则输出 Impossible!。
+输入格式两行，分别是 $N$，$M$。
+输出格式如果能在 $30$ 步以内得到回文数，输出格式形如 STEP=ans，其中 $\text{ans}$ 为最少得到回文数的步数。
+否则输出 Impossible!。
+输入输出样例 #1输入 #11087
+
+输出 #1STEP=4
+
+
+处理思路读入首先，我们使用cin去将输入数据储存到int N和string M中，
+之所以使用string M是因为M.size()可以很方便的获取字符长度
+以便后续转移到数组中
+转移得到字符串之后，我们还需要补位，
+即最终结果可能有110位，输入的有3位，
+我们也要把有效数字前的107位补上
+（虽然后续操作也要逆过来找有效数字，但是这样做可以避免进位操作时未指定元素初始值而导致的错误）
+while(M.size() &lt; 110)M = &#39;0&#39; + M;
+之后使用
+for(int i = 0;i&lt;110;i++)&#123;	if(M[i] &gt;= &#x27;0&#x27; &amp;&amp; M[i] &lt;= &#x27;9&#x27;)		arr[i] = M[i] - &#x27;0&#x27;;	else 		arr[i] = M[i] - &#x27;A&#x27; + 10;&#125;
+将字符串转移到int arr[110]中
+其中对Ascii码值操作可以将字符转为对应数组
+判断这个功能是核心，用来判断每一步之后的数字是不是回文数
+bool check()&#123;    //由于补有0，所以要寻找有效数字	int f = -1;	for(int i = 0;i&lt;110;i++)&#123;		if(arr[i] != 0 &amp;&amp; f == -1)f = i;		if(f != -1 &amp;&amp; arr[109 - (i-f)] != arr[i])&#123;//直接对ascill进行比较			return false;            //找到不对称的马上给出否定结果并跳出		&#125;	&#125;    return true;    //没有找到不对称的给出肯定结果&#125;
+模拟计算捕捉void _step()&#123;//step与万能头里的函数重名了	int brr[110];	for(int i = 0;i&lt;110;i++)&#123;		brr[i] = arr[i];	&#125;    //先记录初始的值	int f = -1;//找有效数字	for(int j = 0;j&lt;110;j++)&#123;		if(brr[j] != 0 &amp;&amp; f == -1)f = j;		if(f != -1)&#123;			arr[109 - (j-f)] += brr[j];            //逐位运算		&#125;	&#125;	for(int k = 109;k&gt;0;k--)&#123;		arr[k-1] += arr[k] / N;		arr[k] = arr[k] % N;        //根据N进行进位//		cout &lt;&lt; arr[k] &lt;&lt; endl;	&#125;	res++;    //步骤数+1&#125;
+
+完整代码#include &lt;bits/stdc++.h&gt;using namespace std;int arr[110],N,res = 0,step = 0;string M;bool check()&#123;	int f = -1;	for(int i = 0;i&lt;110;i++)&#123;		if(arr[i] != 0 &amp;&amp; f == -1)f = i;		if(f != -1 &amp;&amp; arr[109 - (i-f)] != arr[i])&#123;			return false;		&#125;	&#125;	return true;&#125;void _step()&#123;	int brr[110];	for(int i = 0;i&lt;110;i++)&#123;		brr[i] = arr[i];	&#125;	int f = -1;	for(int j = 0;j&lt;110;j++)&#123;		if(brr[j] != 0 &amp;&amp; f == -1)f = j;		if(f != -1)&#123;			arr[109 - (j-f)] += brr[j];		&#125;	&#125;	for(int k = 109;k&gt;0;k--)&#123;		arr[k-1] += arr[k] / N;		arr[k] = arr[k] % N;//		cout &lt;&lt; arr[k] &lt;&lt; endl;	&#125;	res++;&#125;int main()&#123;	cin &gt;&gt; N &gt;&gt; M;	while(M.size() &lt; 110)M = &#x27;0&#x27; + M;//	cout &lt;&lt; M;	for(int i = 0;i&lt;110;i++)&#123;		if(M[i] &gt;= &#x27;0&#x27; &amp;&amp; M[i] &lt;= &#x27;9&#x27;)			arr[i] = M[i] - &#x27;0&#x27;;		else 			arr[i] = M[i] - &#x27;A&#x27; + 10;	&#125;	for(int j = 0;j&lt;30;j++)&#123;		_step();		if(check() == true)&#123;			cout &lt;&lt; &quot;STEP=&quot; &lt;&lt; res;			return 0;		&#125;	&#125;	cout &lt;&lt; &quot;Impossible!&quot;;	return 0;&#125;]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>CPP</tag>
+        <tag>NOIP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NOIP普及组教学2-数的计算</title>
+    <url>/NOIP%E6%99%AE%E5%8F%8A%E7%BB%84%E6%95%99%E5%AD%A62-%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97/</url>
+    <content><![CDATA[P1028 [NOIP 2001 普及组] 数的计算题目描述给出正整数 $n$，要求按如下方式构造数列：
+
+只有一个数 $n$ 的数列是一个合法的数列。
+在一个合法的数列的末尾加入一个正整数，但是这个正整数不能超过该数列最后一项的一半，可以得到一个新的合法数列。
+
+请你求出，一共有多少个合法的数列。两个合法数列 $a, b$ 不同当且仅当两数列长度不同或存在一个正整数 $i \leq |a|$，使得 $a_i \neq b_i$。
+输入格式输入只有一行一个整数，表示 $n$。
+输出格式输出一行一个整数，表示合法的数列个数。
+输入输出样例 #1输入 #16
+
+输出 #16
+
+说明&#x2F;提示样例 1 解释满足条件的数列为：
+
+$6$
+$6, 1$
+$6, 2$
+$6, 3$
+$6, 2, 1$
+$6, 3, 1$
+
+数据规模与约定对于全部的测试点，保证 $1 \leq n \leq 10^3$。
+说明本题数据来源是 NOIP 2001 普及组第一题，但是原题的题面描述和数据不符，故对题面进行了修改，使之符合数据。原题面如下，谨供参考：
+
+我们要求找出具有下列性质数的个数（包含输入的正整数 $n$）。
+先输入一个正整数 $n$（$n \le 1000$），然后对此正整数按照如下方法进行处理：
+
+不作任何处理；
+在它的左边拼接一个正整数，但该正整数不能超过原数，或者是上一个被拼接的数的一半；
+加上数后，继续按此规则进行处理，直到不能再加正整数为止。
+
+
+感谢 @dbxxx 对本题情况的反馈，原题面的问题见本贴。
+
+这是一道十分纯正的数学问题
+如果你是高中生，一定能想到这就是排列组合问题
+逻辑根据题目我们可以知道，每个数都有两种状态
+
+同级平移
+延伸
+
+比如说样例 6
+作为根数字它必须延伸（其他数字则可以自由选择延伸或不延伸）
+根据说明在一个合法的数列的末尾加入一个正整数，但是这个正整数不能超过该数列最后一项的一半，可以得到一个新的合法数列
+
+那么延伸的第一种可能我们就定为floor(i/2)
+这样就变成了6-&gt;3
+
+
+根据这个说明第二种延伸可能我们就定为floor(i/2)-1
+这样就变成了6-&gt;2
+这个同时也可以看作3的同级平移
+
+
+同理6-&gt;3还可以延展为6-&gt;3-&gt;1
+同时我们还可以发现i=1既不能继续延伸也不能同级平移
+所以我们将i=1作为边界条件
+其他数字则用递推获取
+
+
+
+完整代码#include &lt;bits/stdc++.h&gt;using namespace std;int solve(int b)&#123;	if(b == 1)return 1;	int res = 1;	for(int i = 1;i&lt;=floor(b/2);i++)		res += solve(i);	return res;&#125;int main()&#123;	int R;	cin &gt;&gt; R;	cout &lt;&lt; solve(R);	return 0;&#125;
+这样是不是就得了？提交代码后发现超时了
+我们发现，每一个数字产生的种类只与i有关而与它的父节点无关
+所以我们可以用一个数组记录结果，这样就可以避免重复计算
+#include &lt;bits/stdc++.h&gt;using namespace std;int arr[1001];int solve(int b)&#123;	if(arr[b] != -1)return arr[b];	int res = 1;	for(int i = 1;i&lt;=floor(b/2);i++)		res += solve(i);	arr[b] = res;	return res;&#125;int main()&#123;	int R;	for(int i = 0;i&lt;1001;i++)arr[i] = -1;	arr[1] = 1;	cin &gt;&gt; R;	cout &lt;&lt; solve(R);	return 0;&#125;]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>CPP</tag>
+        <tag>NOIP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于Tangyuxian主题对文章无法正常检测分类和标签的解决方案</title>
+    <url>/%E5%85%B3%E4%BA%8ETangyuxian%E4%B8%BB%E9%A2%98%E5%AF%B9%E6%96%87%E7%AB%A0%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%A3%80%E6%B5%8B%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[我发现这个主题 hexo server 启动时不会自动检测文章的分类和标签，
+但是可以在 hexo server 启动之后，并且在 hexo generate –watch 监视之后对文章进行修改便可以解决问题
+于是我写出了一下代码(笑哭)
+const fs = require(&quot;fs&quot;);fs.readdirSync(&quot;./source/_posts&quot;).forEach(item=&gt;&#123;    var name = &quot;./source/_posts/&quot;+item;    var inner = fs.readFileSync(&quot;./source/_posts/&quot;+item).toString();    fs.writeFileSync(name,inner+&#x27;a&#x27;);    fs.writeFileSync(name,inner.substr(0,inner.length));&#125;)]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>教你做地雷</title>
@@ -39,6 +163,48 @@ chicken 表示代表的实体，可替换
 /execute as @e[type=chicken] at @s if entity @a[r=3] run damage @e 10 block_explosion
 3 表示触发范围,10 表示伤害
 ]]></content>
+      <categories>
+        <category>我的世界指令</category>
+      </categories>
+      <tags>
+        <tag>我的世界指令</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>终末地666</title>
+    <url>/%E7%BB%88%E6%9C%AB%E5%9C%B0666/</url>
+    <content><![CDATA[已经好久没玩二游了（上一次玩的还是原神&#x2F;流汗黄豆），
+加上今天是周末，不用助教
+然后在捣鼓工业，过了0点才意识到
+结果就是蓝桥漏打卡一天
+最后直接摆烂，把自己的工业建崩了(效率不对等并且超功率了)(笑哭)
+还有，为什么Watt Toolkit 没有 pixiv 的加速了
+整得我只能去 Bilibili 找版图
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>终末地</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我终于学会怎么在Hexo中插入图片了TAT</title>
+    <url>/%E6%88%91%E7%BB%88%E4%BA%8E%E5%AD%A6%E4%BC%9A%E6%80%8E%E4%B9%88%E5%9C%A8Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E4%BA%86TAT/</url>
+    <content><![CDATA[
+目前大部分在 Hexo 使用图片都是依靠 hexo-asset-image
+但是我们还可以直接把图片放在 .&#x2F;public 下
+重要提醒: 这样做之前，在 _config.yml 中 post_asset_folder 项改为 false
+比如放了一张 1.png ,引用的 URL 为 .&#x2F;1.png
+同理，可以直接在.&#x2F;public 存放其他类型的资源
+但是我们发现使用 hexo clean 会将 .&#x2F;public&#x2F; 清空，所以请记得备份哦
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>显示最近的实体</title>
@@ -55,26 +221,12 @@ chicken 表示代表的实体，可替换
 16表示范围，可修改
 4.连锁 无条件 保持开启(被3所指)
 /titleraw @a actionbar &#123;&quot;rawtext&quot;: [&#123;&quot;text&quot;: &quot;§6附近实体数: §a&quot;&#125;, &#123;&quot;score&quot;:&#123;&quot;name&quot;: &quot;@s&quot;,&quot;objective&quot;: &quot;number1&quot;&#125;&#125;]&#125;]]></content>
-  </entry>
-  <entry>
-    <title>关于Tangyuxian主题对文章无法正常检测分类和标签的解决方案</title>
-    <url>/%E5%85%B3%E4%BA%8ETangyuxian%E4%B8%BB%E9%A2%98%E5%AF%B9%E6%96%87%E7%AB%A0%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%A3%80%E6%B5%8B%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
-    <content><![CDATA[我发现这个主题 hexo server 启动时不会自动检测文章的分类和标签，
-但是可以在 hexo server 启动之后，并且在 hexo generate –watch 监视之后对文章进行修改便可以解决问题
-于是我写出了一下代码(笑哭)
-const fs = require(&quot;fs&quot;);fs.readdirSync(&quot;./source/_posts&quot;).forEach(item=&gt;&#123;    var name = &quot;./source/_posts/&quot;+item;    var inner = fs.readFileSync(&quot;./source/_posts/&quot;+item).toString();    fs.writeFileSync(name,inner+&#x27;a&#x27;);    fs.writeFileSync(name,inner.substr(0,inner.length));&#125;)]]></content>
-  </entry>
-  <entry>
-    <title>终末地666</title>
-    <url>/%E7%BB%88%E6%9C%AB%E5%9C%B0666/</url>
-    <content><![CDATA[已经好久没玩二游了（上一次玩的还是原神&#x2F;流汗黄豆），
-加上今天是周末，不用助教
-然后在捣鼓工业，过了0点才意识到
-结果就是蓝桥漏打卡一天
-最后直接摆烂，把自己的工业建崩了(效率不对等并且超功率了)(笑哭)
-还有，为什么Watt Toolkit 没有 pixiv 的加速了
-整得我只能去 Bilibili 找版图
-]]></content>
+      <categories>
+        <category>我的世界指令</category>
+      </categories>
+      <tags>
+        <tag>我的世界指令</tag>
+      </tags>
   </entry>
   <entry>
     <title>高精度乘法-逐位相乘法</title>
