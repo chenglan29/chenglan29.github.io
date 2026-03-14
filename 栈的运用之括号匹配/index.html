@@ -1,37 +1,43 @@
 <!doctype html>
 <html lang="zh"><head>
-<title>文章归档：2026/2 - 橙蓝的博客</title>
+<title>栈的运用之括号匹配 - 橙蓝的博客</title>
 <meta charset="UTF-8">
 <meta name="keywords" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 <link rel="shortcut icon" href="/images/head/head.jpg" type="image/jpg" />
-<meta property="og:type" content="website">
-<meta property="og:title" content="橙蓝的博客">
-<meta property="og:url" content="http://chenglan29.github.io/archives/2026/02/index.html">
+<meta name="description" content="B2165 括号匹配题目描述给定只由 $6$ 种括号字符组成的字符串：(, ), [, ], {, }。判断每个字符串是否为“合法括号序列”，合法则输出 YES，否则输出 NO。合法括号序列的定义：  空串合法； 若 A 合法，则 (A), [A], {A} 均合法； 若 A 与 B 均合法，则 AB 合法。  输入格式第一行一个整数 $T$，表示数据组数。接下来 $T$ 行，每行一个只包含上述">
+<meta property="og:type" content="article">
+<meta property="og:title" content="栈的运用之括号匹配">
+<meta property="og:url" content="http://chenglan29.github.io/%E6%A0%88%E7%9A%84%E8%BF%90%E7%94%A8%E4%B9%8B%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/index.html">
 <meta property="og:site_name" content="橙蓝的博客">
+<meta property="og:description" content="B2165 括号匹配题目描述给定只由 $6$ 种括号字符组成的字符串：(, ), [, ], {, }。判断每个字符串是否为“合法括号序列”，合法则输出 YES，否则输出 NO。合法括号序列的定义：  空串合法； 若 A 合法，则 (A), [A], {A} 均合法； 若 A 与 B 均合法，则 AB 合法。  输入格式第一行一个整数 $T$，表示数据组数。接下来 $T$ 行，每行一个只包含上述">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-03-14T16:10:30.000Z">
+<meta property="article:modified_time" content="2026-03-14T16:26:18.787Z">
 <meta property="article:author" content="橙蓝">
+<meta property="article:tag" content="CPP">
+<meta property="article:tag" content="栈">
 <meta name="twitter:card" content="summary">
 
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-<link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1773505579552">
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1773505579473">
 
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
 
-<link rel="stylesheet" href="/css/style.css?v=1773505579552">
+<link rel="stylesheet" href="/css/style.css?v=1773505579473">
 
 
 
 
     
-        <link rel="stylesheet" href="/custom.css?v=1773505579552">
+        <link rel="stylesheet" href="/custom.css?v=1773505579473">
     
-        <link rel="stylesheet" href="/themes/umaru/index.css?v=1773505579552">
+        <link rel="stylesheet" href="/themes/umaru/index.css?v=1773505579473">
     
-        <link rel="stylesheet" href="/themes/asuka/index.css?v=1773505579552">
+        <link rel="stylesheet" href="/themes/asuka/index.css?v=1773505579473">
     
 
 
@@ -41,7 +47,7 @@
 <script src="/lib/lax.min.js" async></script>
 
 
-<script async src="/js/app.js?v=1773505579552"></script>
+<script async src="/js/app.js?v=1773505579473"></script>
 
  
 
@@ -517,7 +523,7 @@
 </style>
 
 
-    <script async src="/js/search.js?v=1773505579553"></script>
+    <script async src="/js/search.js?v=1773505579474"></script>
         
 
             
@@ -708,20 +714,18 @@
 </div>
 
     </div>
-</div><!-- .nexmoe-drawer --></div><div id="nexmoe-content"><div class="nexmoe-primary"><section class="nexmoe-posts">
-    <div class="nexmoe-post">
-        <a href="/%E9%AB%98%E7%B2%BE%E5%BA%A6%E4%B9%98%E6%B3%95-%E9%80%90%E4%BD%8D%E7%9B%B8%E4%B9%98%E6%B3%95/">
-            
-                <div class="nexmoe-post-cover mdui-ripple">
-                    <img src="/images/background/xiaomai.jpg" alt="高精度乘法-逐位相乘法" loading="lazy">
-                    <h1>高精度乘法-逐位相乘法</h1>
-                </div>
-                
-        </a>
-
-        <div class="nexmoe-post-meta">
+</div><!-- .nexmoe-drawer --></div><div id="nexmoe-content"><div class="nexmoe-primary"><div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover">
+            <img src="/images/background/xiaomai.jpg" alt="栈的运用之括号匹配" loading="lazy">
+            <h1>栈的运用之括号匹配</h1>
+        </div>
+        
+    
+    <div class="nexmoe-post-meta">
     <div class="nexmoe-rainbow">
-        <a class="nexmoefont icon-calendar-fill">2026年02月13日</a>
+        <a class="nexmoefont icon-calendar-fill">2026年03月15日</a>
         
             <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
         
@@ -734,106 +738,82 @@
     
 </div>
 
-        <article>
-            
-        </article>
+    <h1 id="B2165-括号匹配"><a href="#B2165-括号匹配" class="headerlink" title="B2165 括号匹配"></a>B2165 括号匹配</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定只由 $6$ 种括号字符组成的字符串：<code>(</code>, <code>)</code>, <code>[</code>, <code>]</code>, <code>{</code>, <code>}</code>。判断每个字符串是否为“合法括号序列”，合法则输出 YES，否则输出 NO。合法括号序列的定义：</p>
+<ul>
+<li>空串合法；</li>
+<li>若 A 合法，则 <code>(A)</code>, <code>[A]</code>, <code>{A}</code> 均合法；</li>
+<li>若 A 与 B 均合法，则 AB 合法。</li>
+</ul>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行一个整数 $T$，表示数据组数。接下来 $T$ 行，每行一个只包含上述 $6$ 种字符的字符串。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>对于每个字符串，输出一行：</p>
+<ul>
+<li>若其为合法括号序列，输出 YES；</li>
+<li>否则输出 NO。</li>
+</ul>
+<h2 id="输入输出样例-1"><a href="#输入输出样例-1" class="headerlink" title="输入输出样例 #1"></a>输入输出样例 #1</h2><h3 id="输入-1"><a href="#输入-1" class="headerlink" title="输入 #1"></a>输入 #1</h3><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs scss"><span class="hljs-number">1</span><br>()<span class="hljs-selector-attr">[]</span>&#123;&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="输出-1"><a href="#输出-1" class="headerlink" title="输出 #1"></a>输出 #1</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">YES</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="输入输出样例-2"><a href="#输入输出样例-2" class="headerlink" title="输入输出样例 #2"></a>输入输出样例 #2</h2><h3 id="输入-2"><a href="#输入-2" class="headerlink" title="输入 #2"></a>输入 #2</h3><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs scheme"><span class="hljs-number">6</span><br>()<br>([)]<br>([])&#123;&#125;<br>((((<br>&#123;[()()]&#125;<br>&#125;&#123;<br></code></pre></td></tr></table></figure>
+
+<h3 id="输出-2"><a href="#输出-2" class="headerlink" title="输出 #2"></a>输出 #2</h3><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs gams"><span class="hljs-keyword">YES</span><br><span class="hljs-keyword">NO</span><br><span class="hljs-keyword">YES</span><br><span class="hljs-keyword">NO</span><br><span class="hljs-keyword">YES</span><br><span class="hljs-keyword">NO</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明&#x2F;提示"></a>说明&#x2F;提示</h2><p>记单串长度记为 $|S|$。测试数据满足 $1 \leq |S| \leq 10^6$，$1 \leq T \leq 2\times 10^5$，同一输入文件内总长度 $\sum |S| \leq 2\times 10^6$，字符串只包含字符 <code>()[]{}</code>。</p>
+<h2 id="解"><a href="#解" class="headerlink" title="解:"></a>解:</h2><p>我们知道括号像栈一样，遵循 LIFO(后进先出)</p>
+<p>比如:<br><code>{{}</code><br>第二位<code>{</code>是后进的，那么与之匹配的是第三位的<code>}</code></p>
+<p>那么我们用栈的方式思考，<br>我们把 左括号 认为是无条件push， 右括号 认为是有条件pop，<br>条件是栈顶的括号一定和右括号匹配<br>比如<code>(]</code>不符合规则的</p>
+<p>还有其他可能的情况需要注意</p>
+<p>比如<code>(((</code>它没有右括号所以也是不符合的，<br>我们可以判断所有push,pop操作后栈顶下标是否&gt;0，大于则代表栈不为空<br>比如<code>)))</code><br>栈顶下标是否&lt;0，如果是则说明少左括号了</p>
+<p>答案</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">char</span> arr[<span class="hljs-number">1000000</span>];<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-type">int</span> N;<br>    cin &gt;&gt; N;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;i&lt;N;i++)&#123;<br>    	<span class="hljs-type">int</span> sz = <span class="hljs-number">0</span>;<br>        string s;<br>        cin &gt;&gt; s;<br>        <span class="hljs-type">int</span> f = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>;j&lt;s.<span class="hljs-built_in">size</span>();j++)&#123;<br>        	<span class="hljs-keyword">if</span>(s[j] == <span class="hljs-string">&#x27;(&#x27;</span> || s[j] == <span class="hljs-string">&#x27;[&#x27;</span> || s[j] == <span class="hljs-string">&#x27;&#123;&#x27;</span>)&#123;<br>        		arr[sz] = s[j];<br>        		sz++;<br>        	&#125;<br>        	<span class="hljs-keyword">else</span>&#123;<br>        		<span class="hljs-keyword">if</span>(s[j] == <span class="hljs-string">&#x27;)&#x27;</span>)&#123;<br>        			<span class="hljs-keyword">if</span>(arr[sz<span class="hljs-number">-1</span>] == <span class="hljs-string">&#x27;(&#x27;</span>)sz--;<br>        			<span class="hljs-keyword">else</span> &#123;<br>        				f = <span class="hljs-number">1</span>;<br>        				<span class="hljs-keyword">break</span>;<br>        			&#125;<br>        		&#125;<br>        		<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(s[j] == <span class="hljs-string">&#x27;&#125;&#x27;</span>)&#123;<br>        			<span class="hljs-keyword">if</span>(arr[sz<span class="hljs-number">-1</span>] == <span class="hljs-string">&#x27;&#123;&#x27;</span>)sz--;<br>        			<span class="hljs-keyword">else</span> &#123;<br>        				f = <span class="hljs-number">1</span>;<br>        				<span class="hljs-keyword">break</span>;<br>        			&#125;<br>        		&#125;<br>        		<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(s[j] == <span class="hljs-string">&#x27;]&#x27;</span>)&#123;<br>        			<span class="hljs-keyword">if</span>(arr[sz<span class="hljs-number">-1</span>] == <span class="hljs-string">&#x27;[&#x27;</span>)sz--;<br>        			<span class="hljs-keyword">else</span> &#123;<br>        				f = <span class="hljs-number">1</span>;<br>        				<span class="hljs-keyword">break</span>;<br>        			&#125;<br>        		&#125;<br>        	&#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(f == <span class="hljs-number">1</span>)cout &lt;&lt; <span class="hljs-string">&quot;NO\n&quot;</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(sz &gt; <span class="hljs-number">0</span>)cout &lt;&lt; <span class="hljs-string">&quot;NO\n&quot;</span>;<br>        <span class="hljs-keyword">else</span> cout &lt;&lt; <span class="hljs-string">&quot;YES\n&quot;</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+    
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>本文作者：</strong>橙蓝<br>
+        
+        <strong>本文链接：</strong><a href="http://chenglan29.github.io/%E6%A0%88%E7%9A%84%E8%BF%90%E7%94%A8%E4%B9%8B%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/" title="http:&#x2F;&#x2F;chenglan29.github.io&#x2F;%E6%A0%88%E7%9A%84%E8%BF%90%E7%94%A8%E4%B9%8B%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;chenglan29.github.io&#x2F;%E6%A0%88%E7%9A%84%E8%BF%90%E7%94%A8%E4%B9%8B%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D&#x2F;</a><br>
+
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+        
     </div>
 
-    <div class="nexmoe-post">
-        <a href="/%E7%BB%88%E6%9C%AB%E5%9C%B0666/">
-            
-                <div class="nexmoe-post-cover mdui-ripple">
-                    <img src="/images/post/endfield.jpg" alt="终末地666" loading="lazy">
-                    <h1>终末地666</h1>
-                </div>
-                
-        </a>
 
-        <div class="nexmoe-post-meta">
-    <div class="nexmoe-rainbow">
-        <a class="nexmoefont icon-calendar-fill">2026年02月07日</a>
-        
-            <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a>
-        
-        
-    </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
     
-    
-    
-    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/CPP/" rel="tag">CPP</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E6%A0%88/" rel="tag">栈</a>
     
 </div>
+  
+  
+    <script async src="/js/copy-codeblock.js?v=1773505579439"></script>
+  
 
-        <article>
-            
-        </article>
-    </div>
-
-    <div class="nexmoe-post">
-        <a href="/%E5%85%B3%E4%BA%8ETangyuxian%E4%B8%BB%E9%A2%98%E5%AF%B9%E6%96%87%E7%AB%A0%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%A3%80%E6%B5%8B%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
-            
-                <div class="nexmoe-post-cover mdui-ripple">
-                    <img src="/images/background/xiaomai.jpg" alt="关于Tangyuxian主题对文章无法正常检测分类和标签的解决方案" loading="lazy">
-                    <h1>关于Tangyuxian主题对文章无法正常检测分类和标签的解决方案</h1>
-                </div>
-                
-        </a>
-
-        <div class="nexmoe-post-meta">
-    <div class="nexmoe-rainbow">
-        <a class="nexmoefont icon-calendar-fill">2026年02月05日</a>
-        
-            <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
-        
-        
-    </div>
-    
-    
-    
-    
-    
-</div>
-
-        <article>
-            
-        </article>
-    </div>
-
-    <div class="nexmoe-post">
-        <a href="/%E6%98%BE%E7%A4%BA%E6%9C%80%E8%BF%91%E7%9A%84%E5%AE%9E%E4%BD%93/">
-            
-                <div class="nexmoe-post-cover mdui-ripple">
-                    <img src="/images/post/minecraft.jpg" alt="显示最近的实体" loading="lazy">
-                    <h1>显示最近的实体</h1>
-                </div>
-                
-        </a>
-
-        <div class="nexmoe-post-meta">
-    <div class="nexmoe-rainbow">
-        <a class="nexmoefont icon-calendar-fill">2026年02月01日</a>
-        
-            <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%8C%87%E4%BB%A4/">我的世界指令</a>
-        
-        
-    </div>
-    
-    
-    
-    
-    
-</div>
-
-        <article>
-            
-        </article>
-    </div>
-</section> </div><div class="nexmoe-post-right">    <div class="nexmoe-fixed">
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div></div><div class="nexmoe-post-right">    <div class="nexmoe-fixed">
         <div class="nexmoe-tool">
 
             
 
             
+            
+            <button class="mdui-fab catalog" style="overflow:unset;">
+                <i class="nexmoefont icon-i-catalog"></i>
+                <div class="nexmoe-toc">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#B2165-%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D"><span class="toc-number">1.</span> <span class="toc-text">B2165 括号匹配</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text">输入格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">输出格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-1"><span class="toc-number">1.4.</span> <span class="toc-text">输入输出样例 #1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5-1"><span class="toc-number">1.4.1.</span> <span class="toc-text">输入 #1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA-1"><span class="toc-number">1.4.2.</span> <span class="toc-text">输出 #1</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-2"><span class="toc-number">1.5.</span> <span class="toc-text">输入输出样例 #2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5-2"><span class="toc-number">1.5.1.</span> <span class="toc-text">输入 #2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA-2"><span class="toc-number">1.5.2.</span> <span class="toc-text">输出 #2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E-%E6%8F%90%E7%A4%BA"><span class="toc-number">1.6.</span> <span class="toc-text">说明&#x2F;提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3"><span class="toc-number">1.7.</span> <span class="toc-text">解:</span></a></li></ol></li></ol>
+                </div>
+            </button>
             
 
             
